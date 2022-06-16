@@ -11,10 +11,16 @@ Game.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    Author_id:{
+      type: DataTypes.INTEGER, 
+      allowNull: false,
+    },
+
     game_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    
     category_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -33,3 +39,4 @@ Game.init(
     
   },
 )
+module.exports = Game;
