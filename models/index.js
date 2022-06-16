@@ -19,10 +19,22 @@ User.hasMany(Comment, {
 
 Comment.belongsTo(User, {
     foreignKey: 'user_id'
+});
+
+Category.hasMany(Game, {
+    foreignKey: 'category_id'
+});
+
+Game.belongsTo(Category, {
+    foreignKey: 'category_id'
+});
+
+User.hasMany(Game, {
+    foreignKey: 'Author_id',
+    onDelete: 'SET NULL'
+});
+Game.belongsTo(User, {
+    foreignKey: 'Author_id'
 })
 
-// Category.hasOne(Game, {
-//     foreignKey:
-// })
-
-
+module.exports = { Game,Category,Comment,User}
