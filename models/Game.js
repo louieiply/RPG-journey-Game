@@ -14,6 +14,10 @@ Game.init(
     Author_id:{
       type: DataTypes.INTEGER, 
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      }
     },
 
     game_name: {
