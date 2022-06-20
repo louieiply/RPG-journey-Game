@@ -18,7 +18,8 @@ User.hasMany(Comment, {
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
 });
 
 Category.hasMany(Game, {
@@ -30,11 +31,11 @@ Game.belongsTo(Category, {
 });
 
 User.hasMany(Game, {
-    foreignKey: 'Author_id',
+    foreignKey: 'author_id',
     onDelete: 'SET NULL'
 });
 Game.belongsTo(User, {
-    foreignKey: 'Author_id'
+    foreignKey: 'author_id'
 })
 
 module.exports = { Game,Category,Comment,User}

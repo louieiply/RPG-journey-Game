@@ -1,0 +1,14 @@
+[
+    {
+      "category_name": "Fantasy",
+      "description": "A genre of literature that features magical and supernatural elements that do not exist in the real world."
+    },
+    {
+      "category_name": "Horror",
+      "description": "A genre centered on horror fiction and typically designed to scare the player."
+    },
+    {
+      "category_name": "Advanture",
+      "description": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+    }
+  ]

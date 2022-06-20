@@ -11,7 +11,7 @@ Game.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Author_id:{
+    author_id:{
       type: DataTypes.INTEGER, 
       allowNull: false,
       references: {
@@ -42,5 +42,12 @@ Game.init(
     },
     
   },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,    
+    modelName: 'game'
+  }
 )
 module.exports = Game;

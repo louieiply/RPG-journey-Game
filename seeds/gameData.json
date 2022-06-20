@@ -1,0 +1,17 @@
+[
+    {
+      "game_name": "Game 1",
+      "category_id": 1,
+      "description": "Empty for now"
+    },
+    {
+      "game_name": "Game 2",
+      "category_id": 2,
+      "description": "Empty for now"
+    },
+    {
+      "game_name": "Game 3",
+      "category_id": 3,
+      "description": "Empty for now"
+    }
+  ]
