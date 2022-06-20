@@ -1,42 +1,42 @@
 [
     {
         "user_id": 1,
-        "comment": "A genre of literature that features magical and supernatural elements that do not exist in the real world."
+        "comment_text": "A genre of literature that features magical and supernatural elements that do not exist in the real world."
     },
     {
         "user_id": 3,
-        "comment": "A genre centered on horror fiction and typically designed to scare the player."
+        "comment_text": "A genre centered on horror fiction and typically designed to scare the player."
     },
     {
         "user_id": 2,
-        "comment": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+        "comment_text": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
     },
     {
         "user_id": 1,
-        "comment": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+        "comment_text": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
     },
     {
         "user_id": 3,
-        "comment": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+        "comment_text": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
     },
     {
         "user_id": 1,
-        "comment": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+        "comment_text": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
     },
     {
         "user_id": 2,
-        "comment": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+        "comment_text": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
     },
     {
         "user_id": 3,
-        "comment": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+        "comment_text": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
     },
     {
         "user_id": 1,
-        "comment": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+        "comment_text": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
     },
     {
         "user_id": 2,
-        "comment": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
+        "comment_text": "player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving."
     }
   ]

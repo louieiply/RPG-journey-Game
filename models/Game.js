@@ -34,7 +34,7 @@ Game.init(
     },
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: DataTypes.NOW,
     },
     description: {
