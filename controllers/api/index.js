@@ -2,7 +2,7 @@ const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 const game = require('./Game');
 const comment = require('./Comment');
-const categories = require('./')
+const categories = require('./Category');
 
 router.use('/categories',categories);
 router.use('/comments',comment);
