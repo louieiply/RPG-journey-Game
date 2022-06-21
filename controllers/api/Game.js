@@ -44,3 +44,5 @@ const { Game,} = require('../../models');
       });
   
   });
+
+module.exports = router;

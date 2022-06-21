@@ -4,7 +4,7 @@ const game = require('./Game');
 const comment = require('./Comment');
 const categories = require('./')
 
-router.use('/categories',categories);
+//router.use('/categories',categories);
 router.use('/comments',comment);
 router.use('/games',game);
 router.use('/users',userRoutes);
