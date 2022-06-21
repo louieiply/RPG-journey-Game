@@ -2,6 +2,16 @@ const router = require('express').Router();
 const {Comment} = require('../../models')
 const withAuth = require('../../utils/auth');
 
+router.get('/', async (res,req) => {
+    // try{
+    //     const querys = req.query;
+    //     console.log(querys);
+    //     res.json(123);
+    //     //  const commentData = await Comment.findAll
+    // }
+    // catch(err){console.log(err)};
+
+});
 
 router.post('/', withAuth, async (res,req) => {
     try{
