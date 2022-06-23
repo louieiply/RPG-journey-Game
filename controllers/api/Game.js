@@ -1,11 +1,9 @@
 const router = require('express').Router();
-const { Game,} = require('../../models');
+const { Game, User, Category} = require('../../models');
 
   router.get('/', (req, res) => {
     Game.findAll({
-      include: {
-        attributes: ['id', 'Author_id', 'game_name', 'date_created', 'category_id']
-      }
+      include: [{model:User},{model:Category}]
     })
       .then(dbCatData => {
         if(!dbCatData) {
@@ -26,9 +24,7 @@ const { Game,} = require('../../models');
         where: {
           id: req.params.id
         },
-        include: {
-          attributes: ['id', 'Author_id', 'game_name', 'date_created', 'category_id']
-        }
+        include: [{model:User},{model:Category}]
       })
 
       .then(dbCatData => {

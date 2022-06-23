@@ -2,8 +2,22 @@ const router = require('express').Router();
 const {Comment} = require('../../models')
 const withAuth = require('../../utils/auth');
 
+router.get('/', async (req,res) => {
+    try{
+        const querys = req.query.gameid;
+        const commentData = await Comment.findAll({
+            where: {
+                game_id: querys
+              },
+        })
+        res.status(200).json(commentData);
+    }
+    catch(err){console.log(err)
+    res.status(400).json(err)};
 
-router.post('/', withAuth, async (res,req) => {
+});
+
+router.post('/', withAuth, async (req,res) => {
     try{
         const newComment = await Comment.create({
             ...req.body,
