@@ -20,47 +20,17 @@
         <a href="/profile"></a> |
         <button type="button" class="btn btn-primary btn-lg" id="logout">logout</button>
         {{else}}
-        <a href="/login">
+        <a href="views\login.handlebars">
         <button type="button" class="btn btn-primary btn-lg" id="login"> login</button>
         </a>
         {{/if}}
 
      </nav>
 
-
-<div class="d-grid gap-3 p-5">
-
-<div class="card mx-auto" style="width: 100rem;">
-  <div class="card-body">
-    <h5 class="card-title">Story 1</h5>
-    <h6 class="card-subtitle mb-2 text-muted">blob of text, subtitle</h6>
-    <p class="card-text">dfafsadf</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-<div class="card mx-auto" style="width: 100rem;">
-  <div class="card-body">
-    <h5 class="card-title">Story 2</h5>
-    <h6 class="card-subtitle mb-2 text-muted">blob of text, subtitle</h6>
-    <p class="card-text">dfafsadf</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-<div class="card mx-auto" style="width: 100rem;">
-  <div class="card-body">
-    <h5 class="card-title">Story 2</h5>
-    <h6 class="card-subtitle mb-2 text-muted">blob of text, subtitle</h6>
-    <p class="card-text">dfafsadf</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-</div>
+    <main class="container container-fluid mt-4">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
