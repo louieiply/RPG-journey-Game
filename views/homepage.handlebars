@@ -6,25 +6,23 @@
 
 </head>
 
-{{#each story as |story| }}
-<div class="row mb-4 story">
-  <div class="col-md-5">
-    <h2>
-      <a href="/story/{{story.id}}">{{story.name}}</a>
-    </h2>
-    <p>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{story.user.name}} on {{format_date story.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{story.description}}
-    </p>
+{{#each games as |game|}}
+<div class="containter p-2">
+<div class="card mx-auto" style="width: 70rem;">
+  <div class="card-body">
+    <h5 class="card-title">Story {{game.game_name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Name of Game</h6>
+    <p class="card-text">Author Id: {{game.author_id}}</p>
+    <p class="card-text">{{game.date_created}}</p>
+    <p class="card-text">{{game.description}}</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
   </div>
 </div>
+
+</div>
+
 {{/each}}
+
 
 
