@@ -14,17 +14,19 @@
 <body>     
 
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Rpg story</a>
+        <div class="container-fluid">         
+
+        <a class="navbar-brand mx-5" href="#">Rpg story</a>
 
         {{#if logged_in}}
         <a href="/profile"></a> |
-        <button type="button" class="btn btn-primary btn-lg" id="logout">logout</button>
+        <button type="button" class="btn btn-primary btn-lg mx-5" id="logout">logout</button>
         {{else}}
         <a href="/login">
-        <button type="button" class="btn btn-primary btn-lg" id="login"> login</button>
+        <button type="button" class="btn btn-primary btn-lg mx-5" id="login"> login</button>
         </a>
         {{/if}}
-
+        </div>
      </nav>
 
 
