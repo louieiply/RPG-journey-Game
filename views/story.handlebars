@@ -1,14 +1,15 @@
+<nav>
+  <h1>{{story_title}}</h1>
+  <button><a href="./homepage.handlebars">{{homepage}}</a></button>
+  <button>{{logout}}</button>
+</nav>
 <div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
+  <h2>{{story_title}}</h2>
   <p>{{description}}</p>
+  <p>{{user_chapter}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
+    <button class="btn add" data-id="{{chapter.id}}">Add Next Chapter</button>
+    <button class="btn delete" action="/add/complete" method="POST">Delete Previous Chapter</button>
   </p>
 </div>
