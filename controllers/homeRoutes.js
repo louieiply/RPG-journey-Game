@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const games = projectData.map((game) => game.get({ plain: true }));
+    const games = gameData.map((game) => game.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
