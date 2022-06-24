@@ -6,12 +6,11 @@
 </div>
 
 
-
 {{#each games as |game|}}
 <div class="containter p-2">
 <div class="card mx-auto" style="width: 70rem;">
   <div class="card-body">
-    <h5 class="card-title">Story {{game.game_name}}</h5>
+    <a href= "/story/{{game.id}}"><h5 class="card-title">Story {{game.game_name}}</h5></a>
     <h6 class="card-subtitle mb-2 text-muted">Name of Game</h6>
     <p class="card-text">Author Id: {{game.author_id}}</p>
     <p class="card-text">{{game.date_created}}</p>
