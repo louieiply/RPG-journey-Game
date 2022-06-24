@@ -37,7 +37,7 @@ const delButtonHandler = async (event) => {
   };
   
   document
-    .querySelector('.new-post-form')
+    .querySelector('.new-game-form')
     .addEventListener('submit', newFormHandler);
   
   document
