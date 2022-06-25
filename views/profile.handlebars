@@ -1,29 +1,40 @@
+<div class="container">
 
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+  <div class="row">
+    <div class="my-4 col-auto">
+      <h2>Welcome, {{name}}!</h2>
+    </div>
+
+
+
+    {{#each games as |game|}}
+
+    <div class="card col-12 mx-auto">
+      <div class="card-body">
+        <a href="/story/{{game.id}}">
+          <h5 class="card-title">{{game.game_name}}</h5>
+        </a>
+        <h6 class="card-subtitle mb-2 text-muted">Category: {{game.category.category_name}}</h6>
+        <p class="card-text">Author Name: {{game.user.name}}</p>
+        <p class="card-text">{{format_date game.date_created}}</p>
+        <p class="card-text">{{game.description}}</p>
+        <a href="#" class="card-link">Add Chapter</a>
+        <a href="#" class="card-link">Delete Previous Chapter</a>
+      </div>
+    </div>
+
+
+    {{/each}}
+
+
+    <div class="col d-flex justify-content-end align-items-end my-5">
+
+      <button class="btn btn-primary" type="button" onclick="window.location.href='/newstory'">
+        Add Story
+      </button>
+    </div>
   </div>
 </div>
-
-
-{{#each games as |game|}}
-<div class="containter p-2">
-<div class="card mx-auto" style="width: 70rem;">
-  <div class="card-body">
-    <a href= "/story/{{game.id}}"><h5 class="card-title">Story {{game.game_name}}</h5></a>
-    <h6 class="card-subtitle mb-2 text-muted">Category: {{game.category.category_name}}</h6>
-    <p class="card-text">Author Name: {{game.user.name}}</p>
-    <p class="card-text">{{game.date_created}}</p>
-    <p class="card-text">{{game.description}}</p>
-    <a href="#" class="card-link">Add Chapter</a>
-    <a href="#" class="card-link">Delete Previous Chapter</a>
-  </div>
-</div>
-
-</div>
-
-{{/each}}
-
 {{!-- <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Project:</h3>

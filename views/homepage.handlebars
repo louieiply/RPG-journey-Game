@@ -1,29 +1,32 @@
 <!-- Loop over each object in the projects array -->
 
-<head>
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-</head>
+<div class="container">
+  <div class="row">
 
-{{#each games as |game|}}
-<div class="containter p-2">
-<div class="card mx-auto" style="width: 70rem;">
-  <div class="card-body">
-    <h5 class="card-title">Story {{game.game_name}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Name of Game</h6>
-    <p class="card-text">Author Id: {{game.author_id}}</p>
-    <p class="card-text"> Created on {{game.date_created}}</p>
-    <h6 class="card-text">Preview of story</h6>
-    <p class="card-text">{{game.description}}</p>
-    <a href="#" class="card-link">Add Chapter</a>
-    <a href="#" class="card-link">Delete Previous Chapter</a>
+    {{#each games as |game|}}
+      <div class="card col-12 my-2">
+        <div class="card-body">
+          <h5 class="card-title">{{game.game_name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Name of Game</h6>
+          <p class="card-text">Author Name: {{game.user.name}}</p>
+          <p class="card-text">Created on: {{format_date game.date_created}}</p>
+          <h6 class="card-text">Preview of story</h6>
+          <p class="card-text">{{game.description}}</p>
+          <a href="#" class="card-link">Add Chapter</a>
+          <a href="#" class="card-link">Delete Previous Chapter</a>
+        </div>
+      </div>
+
+
+    {{/each}}
+    
+    {{#if logged_in}}
+    <div class="col d-flex justify-content-end align-items-end my-5">
+      <button class="btn btn-primary" type="button" onclick="window.location.href='/newstory'">
+        Add Story
+      </button>
+    </div>
+    {{/if}}
   </div>
 </div>
-
-</div>
-
-{{/each}}
-
-
-
