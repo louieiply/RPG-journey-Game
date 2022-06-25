@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const gameData = await Game.findAll({
       include: [
         {
-          include: [{model:User}],
+          model:User,
           attributes: ['name'],
         },
       ],
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/game/:id', async (req, res) => {
+router.get('/story/:id', async (req, res) => {
   try {
     const gameData = await Game.findByPk(req.params.id, {
       include: [
@@ -40,7 +40,7 @@ router.get('/game/:id', async (req, res) => {
 
     const game = gameData.get({ plain: true });
 
-    res.render('game', {
+    res.render('story', {
       ...game,
       logged_in: req.session.logged_in
     });
