@@ -41,4 +41,6 @@ const { Game, User, Category} = require('../../models');
   
   });
 
+  // router.post()
+
 module.exports = router;

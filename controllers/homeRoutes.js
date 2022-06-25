@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Game } = require('../models');
+const { User, Game, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const gameData = await Game.findAll({
       include: [
         {
-          model: User,
+          include: [{model:User}],
           attributes: ['name'],
         },
       ],
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const games = gameData.map((game) => game.get({ plain: true }));
-
+    console.log(games);
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       games, 
@@ -56,11 +56,11 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Game }],
+      include: [{ model: Game, include:[{model:Category},{model:User,attributes:{exclude: ['password']}}] }],
     });
-
+    
     const user = userData.get({ plain: true });
-
+    console.log(JSON.stringify(user,null,2));
     res.render('profile', {
       ...user,
       logged_in: true
