@@ -1,0 +1,32 @@
+<div class="container">
+  <form class="row justify-content-center" id="newStoryForm">
+    <h1 class="mb-3 col-md-10">Create New Story</h1>
+    <div class="mb-3 col-md-10">
+      <label for="storyName" class="form-label">Story Title</label>
+      <input
+        class="form-control"
+        id="storyName"
+        placeholder="New story title"
+      />
+    </div>
+    <p style="display:none" id="user_id">{{user_id}}</p>
+    <div class="mb-3 col-md-10">
+      <label for="" class="form-label">Category</label>
+      <select id="inputCategory" class="form-select">
+        <option selected>Choose...</option>
+        {{#each categories as |category|}}
+        <option id="{{category.id}}">{{category.category_name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="mb-3 col-md-10">
+      <label for="storyDescription" class="form-label">Story Description</label>
+      <textarea class="form-control" id="storyDescription" rows="3"></textarea>
+    </div>
+    <div class="col-10">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+</div>
+<script src="./js/newstory.js"></script>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Game, Category } = require('../models');
+const { User, Game, Category, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -37,11 +37,23 @@ router.get('/story/:id', async (req, res) => {
         },
       ],
     });
-
+    const commentsData = await Comment.findAll({
+      where: {
+        game_id: req.params.id
+      },
+      include:[
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    })
+    const comments = commentsData.map((comment) => comment.get({ plain: true }));
     const game = gameData.get({ plain: true });
-
+    // console.log(JSON.stringify(comments));
     res.render('story', {
-      ...game,
+      comments,
+      game,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -49,6 +61,21 @@ router.get('/story/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/newstory',withAuth, async (req,res) => {
+  try {
+    const categoriesData = await Category.findAll();
+    const categories = categoriesData.map((category) => category.get({ plain: true }));
+    res.render('newstory',{
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
+      categories,
+    });
+  } catch (err) {
+    console.log(err);
+    res.json(err);
+  }
+})
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -63,7 +90,7 @@ router.get('/profile', withAuth, async (req, res) => {
     console.log(JSON.stringify(user,null,2));
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err);

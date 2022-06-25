@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Game, User, Category} = require('../../models');
+const withAuth = require('../../utils/auth');
+
 
   router.get('/', (req, res) => {
     Game.findAll({
@@ -41,6 +43,16 @@ const { Game, User, Category} = require('../../models');
   
   });
 
-  // router.post()
+  router.post('/', withAuth, async (req,res) => {
+    try{
+        const newGame = await Game.create({
+            ...req.body,
+            author_id: req.session.user_id,
+        });
+        res.status(200).json(newGame);
+    } catch(err) {
+        res.status(400).json(err);
+    }
+});
 
 module.exports = router;

@@ -10,18 +10,19 @@
     <div class="card-body">
       <h1> {{game.game_name}}</h1>
       <h2> Description of game {{game.description}}</h2>
-      <p> Author ID : {{game.author_id}}</p>
+      <p> Author Name: {{game.user.name}}</p>
       <p></p>
 
-      
-      <div class="card">
-        <div class="card-body">
-          <p>
-            load previous chapter here
-          </p>
+      {{#each comments as |com|}}
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">{{com.user.name}}</h6>
+            <p>
+              {{com.comment_text}}
+            </p>
+          </div>
         </div>
-      </div>
-
+      {{/each}}
     </div>
   </div>
 
