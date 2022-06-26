@@ -10,17 +10,17 @@ const postStory = async () => {
         "description":description,
         "category_id":parseInt(categoryId),
     }
-    const response = fetch("/api/games",{
+    const response = await fetch("/api/games",{
         method:"POST",
         headers:{"Content-Type": "application/json"},
         body:JSON.stringify(mapping),
     });
-        // if(response.ok){
-        //     document.location.replace('/profile');
-        // }else {
-        //     alert(response.statusText);
-        //     alert('Login route has failed ');
-        // }
+        if(response.status >= 200 && response.status <= 299){
+            document.location.replace('/profile');
+        }else {
+            alert(response.statusText);
+            alert('Login route has failed ');
+        }
 }
 
 document.querySelector("#newStoryForm").addEventListener("submit",postStory);
