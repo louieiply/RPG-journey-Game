@@ -1,43 +1,69 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RPG!</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPG!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>     
+  <body>
 
-      <nav class="navbar navbar-light bg-light">
-        
+ 
+{{!-- navbar in use --}}
+    <nav class="navbar navbar-light bg-light">
+    {{#if logged_in}}
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Rpg Story</a>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
+        </li>
+        {{!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> --}}
+      </ul>
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-lg"
+            id="logout"
+          >logout</button>
+      {{else}}
         <div class="container-fluid">
-        
-          <a class="navbar-brand" href="/">Rpg story</a>
+        <a class="navbar-brand" href="/">Rpg Story</a>
 
-          {{#if logged_in}}
-          <a href="/profile"></a> 
-          <button type="button" class="btn btn-outline-danger btn-lg" id="logout">logout</button>
-          {{else}}
           <a href="/login">
-          <button type="button" class="btn btn-outline-primary btn-lg" id="login">login</button>
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-lg"
+              id="login"
+            >login</button>
           </a>
-          {{/if}}
-        </div>
+      </div>
+      {{/if}}
+    </nav>
 
-     </nav>
+    {{{body}}}
 
-      {{{ body }}}
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
 
 </html>
