@@ -7,13 +7,13 @@
         class="form-control"
         id="storyName"
         placeholder="New story title"
+        required
       />
     </div>
     <p style="display:none" id="user_id">{{user_id}}</p>
     <div class="mb-3 col-md-10">
       <label for="" class="form-label">Category</label>
-      <select id="inputCategory" class="form-select">
-        <option selected>Choose...</option>
+      <select id="inputCategory" class="form-select" required>
         {{#each categories as |category|}}
         <option id="{{category.id}}">{{category.category_name}}</option>
         {{/each}}
@@ -21,7 +21,7 @@
     </div>
     <div class="mb-3 col-md-10">
       <label for="storyDescription" class="form-label">Story Description</label>
-      <textarea class="form-control" id="storyDescription" rows="3"></textarea>
+      <textarea class="form-control" id="storyDescription" rows="3" required></textarea>
     </div>
     <div class="col-10">
       <button type="submit" class="btn btn-primary">Submit</button>

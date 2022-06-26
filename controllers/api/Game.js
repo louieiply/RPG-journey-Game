@@ -49,7 +49,7 @@ const withAuth = require('../../utils/auth');
             ...req.body,
             author_id: req.session.user_id,
         });
-        res.status(200).json(newGame);
+        res.status(200).json({message: "Game has been created"});
     } catch(err) {
         res.status(400).json(err);
     }
