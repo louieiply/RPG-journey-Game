@@ -19,22 +19,23 @@
       {{/each}}
     </div>
   </div>
+  {{#if logged_in}}
+    <div class="card">
+      <div class="card-body">
+          <div class="form-group pt-3">
+            <label for="comment_text">Enter Journay</label>
+            <textarea class="form-control" id="comment_text" rows="3"></textarea>
+          </div>
 
-  <div class="card">
-    <div class="card-body">
-        <div class="form-group pt-3">
-          <label for="comment_text">Enter Journay</label>
-          <textarea class="form-control" id="comment_text" rows="3"></textarea>
-        </div>
+          <div class="pt-2">
+            <button type="button" class="btn btn-outline-success" id="sendCommentButton">Add Next Chapter</button>
+            <button type="button" class="btn btn-outline-danger" action="/add/complete" method="POST">Delete Previous Chapter</button>
+          </div>
+          
 
-        <div class="pt-2">
-          <button type="button" class="btn btn-outline-success" id="sendCommentButton">Add Next Chapter</button>
-          <button type="button" class="btn btn-outline-danger" action="/add/complete" method="POST">Delete Previous Chapter</button>
-        </div>
-        
-
+      </div>
     </div>
-  </div>
+  {{/if}}
 </div>
 
 <script src="../js/comment.js"></script>
