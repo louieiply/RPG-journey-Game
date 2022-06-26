@@ -15,7 +15,7 @@ const postStory = async () => {
         headers:{"Content-Type": "application/json"},
         body:JSON.stringify(mapping),
     });
-        if(response.status >= 200 && response.status <= 299){
+        if(response.ok){
             document.location.replace('/profile');
         }else {
             alert(response.statusText);
