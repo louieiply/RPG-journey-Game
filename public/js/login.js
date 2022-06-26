@@ -22,7 +22,7 @@ const loginFormHandler = async (event) => {
         } else {
             // alert(response.statusText);
             // alert('Login route has failed ');
-            signupAlert.style.display = "hidden";
+            signupAlert.style.display = "none";
             loginAlert.style.display = "inline";
 
         }
