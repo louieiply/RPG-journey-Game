@@ -5,18 +5,16 @@
   <div class="row">
 
     {{#each games as |game|}}
-      <div class="card col-12 my-2">
-        <div class="card-body">
-          <a href="story/{{game.id}}">
-            <h5 class="card-title">{{game.game_name}}</h5>
-          </a>
-          <h6 class="card-subtitle mb-2 text-muted">Name of Game</h6>
-          <p class="card-text">Author Name: {{game.user.name}}</p>
-          <p class="card-text">Created on: {{format_date game.date_created}}</p>
-          <h6 class="card-text">Preview of story</h6>
-          <p class="card-text">{{game.description}}</p>
-
-        </div>
+    <div class="card col-12 my-2">
+      <div class="card-body">
+        <a class="card-"href="/story/{{game.id}}">
+        <h5 class="card-title">{{game.game_name}}</h5>
+        </a>
+        <h6 class="card-subtitle mb-2 text-muted">Name of Game</h6>
+        <p class="card-text">Author Name: {{game.user.name}}</p>
+        <p class="card-text">Created on: {{format_date game.date_created}}</p>
+        <h6 class="card-text">Preview of story</h6>
+        <p class="card-text">{{game.description}}</p>
       </div>
     </div>
 
