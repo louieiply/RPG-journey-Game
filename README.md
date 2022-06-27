@@ -29,7 +29,7 @@ If the user enter their own account. Then they can edit their personal adventure
 The game story is completed by everyone, therefore, we can create a game that will be loved by everyone.
 
 ## screenshot:
-[Login page Screenshot](./public/login.png) [Dashboard Screenshot](./public/mainpage.png) [Game 1 Screenshot](./public/game1.png)
+![Login page Screenshot](./public/login.png) ![Dashboard Screenshot](./public/mainpage.png) ![Game 1 Screenshot](./public/game1.png)
 ## Applications used:
 - Node.Js
 - Express.Js
