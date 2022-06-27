@@ -1,9 +1,12 @@
 <!-- Loop over each object in the projects array -->
-
-
 <div class="container">
   <div class="row">
-
+    <div class="alert alert-success" role="alert" id="welcomeAlert">
+      The welcome will shows every available journey
+    </div>
+    <div class="my-4 col-auto">
+      <h2>Welcome to the homepage!</h2>
+    </div>
     {{#each games as |game|}}
     <div class="card col-12 my-2">
       <div class="card-body">
@@ -30,3 +33,5 @@
     {{/if}}
   </div>
 </div>
+
+<script src="./js/homepage.js"></script>

@@ -17,11 +17,8 @@ const loginFormHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
-            alert(response.ok);
             document.location.replace('/profile');
         } else {
-            // alert(response.statusText);
-            // alert('Login route has failed ');
             signupAlert.style.display = "none";
             loginAlert.style.display = "inline";
 

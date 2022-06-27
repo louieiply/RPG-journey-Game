@@ -17,9 +17,6 @@ const postStory = async () => {
     });
         if(response.ok){
             document.location.replace('/profile');
-        }else {
-            alert(response.statusText);
-            alert('Login route has failed ');
         }
 }
 

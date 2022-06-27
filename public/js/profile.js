@@ -35,7 +35,13 @@ const delButtonHandler = async (event) => {
       }
     }
   };
-  
+
+const hideWelcomeAlert = async () => {
+  const welcomeAlert = document.querySelector("#welcomeAlert");
+  welcomeAlert.style.display = "none";
+}
+  setTimeout(hideWelcomeAlert,5000);  
+
   document
     .querySelector('.new-game-form')
     .addEventListener('submit', newFormHandler);

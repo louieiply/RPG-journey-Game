@@ -4,7 +4,6 @@ const postComment = async (event) => {
     const comment_text = document.querySelector("#comment_text").value;
     const game_id = document.querySelector("#game_id").textContent;
     if(comment_text.trim().length === 0){
-        alert("return");
         return;
     }
     const mapping = {
@@ -17,13 +16,8 @@ const postComment = async (event) => {
         body: JSON.stringify(mapping),
     });
     
-    alert(response.ok);
     if(response.ok) {
         window.location.reload();
-    }
-    else{
-        alert(response.statusText);
-        alert('Input Failed');
     }
 }
 const sendbutton = document.querySelector("#sendCommentButton");
